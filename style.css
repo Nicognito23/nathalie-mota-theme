@@ -7,3 +7,173 @@ Author URI: https://www.nathaliemota.com/
 Version: 1.0
 Text Domain: nathalie-mota
 */
+
+/* VARIABLES GLOBALES */
+:root {
+    /* Couleurs */
+    --rouge: #E00000;
+    --rouge-secondary: #FE5858;
+    --rouge-tertiary: #FFD6D6;
+    --noir: #000000;
+    --bleu-fonce: #313144;
+    --gris-medium: #D8D8D8;
+    --gris-light: #E5E5E5;
+    --gris-fonce: #C4C4C4;
+
+    /* Fonts */
+    --font-titre: 'Space Mono', monospace;
+    --font-texte: 'Poppins', sans-serif;
+}
+
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-texte);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--noir);
+    background-color: #fff;
+}
+
+/* TYPOGRAPHIE */
+h1 {
+    font-family: var(--font-titre);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 96px;
+    line-height: 100%;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: var(--font-titre);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 66px;
+    line-height: 58px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--font-titre);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 10%;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: var(--font-texte);
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* HEADER */
+.site-header {
+    width: 100%;
+    border-bottom: 1px solid var(--gris-medium);
+    padding: 0 40px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.site-logo img {
+    height: 20%;
+    width: auto;
+    margin-left: 60px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-list a {
+    font-family: var(--font-titre);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--noir);
+}
+
+.nav-list a:hover {
+    color: var(--rouge);
+    transition: color 0.3s ease;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--noir);
+    transition: all 0.3s ease;
+}
+
+/* FOOTER */
+.site-footer {
+    border-top: 1px solid var(--gris-medium);
+    padding: 20px 40px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-list {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.footer-list a {
+    font-family: var(--font-titre);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--noir);
+}
+
+.footer-list a:hover {
+    color: var(--rouge);
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .header-nav { display: none; }
+    .header-nav.is-open { display: block; }
+    .burger { display: flex; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    h1 { font-size: 27.59px; }
+    h2 { font-size: 46px; line-height: 48px; }
+}
