@@ -166,6 +166,119 @@ p {
     transition: color 0.3s ease;
 }
 
+/* MODALE */
+.modal-overlay {
+    display: flex; /* toujours flex */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* invisible par défaut */
+    pointer-events: none; /* non cliquable par défaut */
+    transition: opacity 0.3s ease; /* animation fluide */
+}
+
+.modal-overlay.is-active {
+    opacity: 1; /* visible */
+    pointer-events: all; /* cliquable */
+}
+
+
+.modal-container {
+    background: #fff;
+    padding: 60px 80px;
+    width: 30%;
+    max-width: 900px;
+    position: relative;
+    border: none;
+    transform: translateY(-20px); /* légèrement décalé vers le haut */
+    transition: transform 0.3s ease; /* animation de glissement */
+}
+
+.modal-overlay.is-active .modal-container {
+    transform: translateY(0); /* revient à sa position normale */
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--noir);
+    font-family: var(--font-titre);
+}
+
+.modal-title {
+    font-family: var(--font-titre);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+/* Styles des champs Contact Form 7 */
+.wpcf7-form label {
+    font-family: var(--font-titre);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+    width: 100%;
+    border: 1px solid var(--noir); /* bordure noire */
+    border-radius: 0; /* supprime les coins arrondis */
+    padding: 10px;
+    font-family: var(--font-texte);
+    font-size: 14px;
+    outline: none;
+    display: block;
+    margin-top: 5px;
+    height: 45px; /* même hauteur pour tous les champs */
+    background: #fff;
+    -webkit-appearance: none; /* supprime le style par défaut du navigateur */
+}
+
+.wpcf7-form textarea {
+    height: 200px; /* exception pour le textarea */
+    resize: none; /* empêche le redimensionnement */
+}
+.wpcf7-form input[type="submit"] {
+    font-family: var(--font-titre); /* Space Mono */
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--gris-light); /* fond gris clair */
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    height: 45px;
+    width: 100%; /* même largeur que les autres champs */
+    text-align: center;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background: var(--noir);
+    color: #fff;
+}
+
+
 @media (max-width: 768px) {
     .header-nav { display: none; }
     .header-nav.is-open { display: block; }
