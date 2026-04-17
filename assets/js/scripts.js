@@ -16,6 +16,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    openBtns.forEach(function(btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault(); 
+            const reference = this.getAttribute('data-reference');
+            if (reference) {
+                const refField = document.querySelector('.wpcf7-form input[name="your-subject"]');
+                if (refField) refField.value = reference; 
+            }
+            overlay.classList.add('is-active'); 
+            overlay.setAttribute('aria-hiden', 'false');
+            document.body.style.overflow = 'hiden'; 
+        });
+    });
+
     // --- Fermer via le bouton ---
     if (closeBtn) {
         closeBtn.addEventListener('click', closeModal);
