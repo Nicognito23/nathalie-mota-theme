@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // =====================
     // FILTRES + CHARGER PLUS
     // =====================
-    const grid      = document.getElementById('photos-grid');
-    const btnMore   = document.getElementById('charger-plus');
-    const selectCat = document.getElementById('filtre-categorie');
-    const selectFmt = document.getElementById('filtre-format');
-    const selectTri = document.getElementById('filtre-tri');
+    const grid      = document.getElementById('gallery-grid');
+    const btnMore   = document.getElementById('load-more');
+    const selectCat = document.getElementById('filter-category');
+    const selectFmt = document.getElementById('filter-format');
+    const selectTri = document.getElementById('filter-sort');
 
     if (grid) {
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (!append) grid.innerHTML = '';
 
                     if (!data.photos || !data.photos.length) {
-                        if (!append) grid.innerHTML = '<p style="padding:20px;font-family:var(--font-titre)">Aucune photo trouvée.</p>';
+                        if (!append) grid.innerHTML = '<p style="padding:20px;font-family:var(--font-title)">Aucune photo trouvée.</p>';
                         if (btnMore) btnMore.style.display = 'none';
                         return;
                     }
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         article.classList.add('photo-block');
                         article.innerHTML = `
                             <div class="photo-block-inner">
-                                <a href="${photo.lien}" class="photo-block-img-wrap">
+                                <a href="${photo.lien}" class="photo-block-link">
                                     <img src="${photo.img}" alt="${photo.titre}" class="photo-block-img">
                                     <div class="photo-block-overlay">
                                         <a href="${photo.lien}" class="photo-icon" title="Voir les infos">👁</a>

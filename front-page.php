@@ -5,16 +5,16 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/nathalie-11.jpeg');"></div>
-        <h1 class="hero-titre">Photographe Event</h1>
+        <h1 class="hero-title">Photographe Event</h1>
     </section>
 
     <!-- FILTRES -->
-    <section class="filtres-section">
-        <div class="filtres-inner">
+    <section class="filters-section">
+        <div class="filters-inner">
 
-            <div class="filtres-gauche">
+            <div class="filters-left">
                 <!-- Filtre Catégories -->
-                <select id="filtre-categorie" class="filtre-select">
+                <select id="filter-category" class="filter-select">
                     <option value="">Catégories</option>
                     <?php
                     $categories = get_terms(['taxonomy' => 'categorie', 'hide_empty' => false]);
@@ -25,7 +25,7 @@
                 </select>
 
                 <!-- Filtre Formats -->
-                <select id="filtre-format" class="filtre-select">
+                <select id="filter-format" class="filter-select">
                     <option value="">Formats</option>
                     <?php
                     $formats = get_terms(['taxonomy' => 'format', 'hide_empty' => false]);
@@ -37,7 +37,7 @@
             </div>
 
             <!-- Tri par date -->
-            <select id="filtre-tri" class="filtre-select">
+            <select id="filter-sort" class="filter-select">
                 <option value="DESC">Trier par</option>
                 <option value="DESC">Plus récentes</option>
                 <option value="ASC">Plus anciennes</option>
@@ -47,8 +47,8 @@
     </section>
 
     <!-- GRILLE PHOTOS -->
-    <section class="photos-section">
-        <div class="photos-grid" id="photos-grid">
+    <section class="gallery-section">
+        <div class="gallery-grid" id="gallery-grid">
             <?php
             $photos = new WP_Query([
                 'post_type'      => 'photo',
@@ -67,8 +67,8 @@
         </div>
 
         <!-- BOUTON CHARGER PLUS -->
-        <div class="charger-plus-wrap">
-            <button id="charger-plus" class="btn-charger-plus" data-page="2">
+        <div class="load-more-wrap">
+            <button id="load-more" class="btn-load-more" data-page="2">
                 Charger plus
             </button>
         </div>

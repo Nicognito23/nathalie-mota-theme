@@ -8,7 +8,7 @@
 
         <!-- BLOC GAUCHE : infos -->
         <div class="photo-infos">
-            <h1 class="photo-titre"><?php the_title(); ?></h1>
+            <h1 class="photo-title"><?php the_title(); ?></h1>
 
             <p class="photo-meta">
                 RÉFÉRENCE : <?php echo get_field('reference'); ?>
@@ -67,9 +67,9 @@
     ?>
 
     <!-- MINIATURE au-dessus des flèches -->
-    <div class="nav-miniature">
+    <div class="nav-thumbnail-wrap">
         <?php if ($next) : ?>
-            <?php echo get_the_post_thumbnail($next->ID, 'thumbnail', ['class' => 'nav-thumb-img']); ?>
+            <?php echo get_the_post_thumbnail($next->ID, 'thumbnail', ['class' => 'nav-thumbnail-img']); ?>
         <?php endif; ?>
     </div>
 
@@ -87,10 +87,10 @@
     </section>
 
     <!-- ZONE PHOTOS APPARENTÉES -->
-    <section class="photos-apparentees">
-        <h3 class="apparentees-titre">Vous aimerez aussi</h3>
+    <section class="related-section">
+        <h3 class="related-title">Vous aimerez aussi</h3>
 
-        <div class="apparentees-grid">
+        <div class="related-grid">
             <?php
             $categories = get_the_terms(get_the_ID(), 'categorie');
             $cat_ids = [];

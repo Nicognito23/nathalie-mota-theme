@@ -1,6 +1,6 @@
 <article class="photo-block">
     <div class="photo-block-inner">
-        <a href="<?php the_permalink(); ?>" class="photo-block-img-wrap">
+        <a href="<?php the_permalink(); ?>" class="photo-block-link">
             <?php if (has_post_thumbnail()) : ?>
                 <?php the_post_thumbnail('large', ['class' => 'photo-block-img']); ?>
             <?php endif; ?>
